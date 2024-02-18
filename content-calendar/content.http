@@ -1,0 +1,38 @@
+### Find All COntent
+GET http://localhost:8080/api/content
+
+### Get content by ID
+GET http://localhost:8080/api/content/1
+
+### Create new Content
+POST http://localhost:8080/api/content
+Content-Type: application/json
+
+{
+  "id": 2,
+  "title": "Mi bonito segundo post",
+  "desc": "Descripcion fea",
+  "status": "IDEA",
+  "contentType": "ARTICLE",
+  "dateCreated": "2024-02-17T21:21:54.6315271",
+  "dateUpdated": null,
+  "url": ""
+}
+
+### update existing Content
+PUT http://localhost:8080/api/content/2
+Content-Type: application/json
+
+{
+  "id": 1,
+  "title": "MI PRIMER POST",
+  "desc": "DESCRIPCION FEA",
+  "status": "IDEA",
+  "contentType": "ARTICLE",
+  "dateCreated": "2024-02-17T21:21:54.6315271",
+  "dateUpdated": "2024-02-17T21:21:54.6315271",
+  "url": "http://localhost:8080/un-blog"
+}
+
+### delete by id
+DELETE http://localhost:8080/api/content/2
