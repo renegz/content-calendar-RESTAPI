@@ -1,0 +1,6 @@
+#Otra manera que no es tan verbose para colocar configuraciones
+#spring:
+  #datasource:
+  #  username: sa
+  #  password: password
+  #  driver-class-name: org.h2.Driver
