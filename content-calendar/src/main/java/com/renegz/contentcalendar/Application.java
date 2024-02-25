@@ -21,7 +21,7 @@ public class Application {
 		SpringApplication.run(Application.class, args);
 
 	}
-
+	/*
 	@Bean
 	CommandLineRunner commandLineRunner(ContentRepository repository){
 		return args -> {
@@ -36,6 +36,6 @@ public class Application {
 					"");
 			repository.save(content);
 		};
-	}
+	}*/
 
 }
