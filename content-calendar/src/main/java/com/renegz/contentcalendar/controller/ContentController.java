@@ -1,7 +1,8 @@
 package com.renegz.contentcalendar.controller;
 
 import com.renegz.contentcalendar.model.Content;
-import com.renegz.contentcalendar.repository.ContentCollectionRepository;
+import com.renegz.contentcalendar.model.Status;
+import com.renegz.contentcalendar.repository.ContentRepository;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -15,9 +16,9 @@ import java.util.List;
 @CrossOrigin("*") //Definimos la politica cors para todos los dominios
 public class ContentController {
 
-    private final ContentCollectionRepository repository;
+    private final ContentRepository repository;
 
-    public ContentController(ContentCollectionRepository repository) {
+    public ContentController(ContentRepository repository) {
         this.repository = repository;
     }
 
@@ -41,7 +42,7 @@ public class ContentController {
     }
 
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    @PutMapping("/{id}")//ruta para un metodo post
+    @PutMapping("/{id}")//ruta para un metodo put
     public void update(@RequestBody Content content, @PathVariable Integer id){
         if (!repository.existsById(id)){
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Content not found");
@@ -55,7 +56,17 @@ public class ContentController {
         if (!repository.existsById(id)){
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Content not found");
         }
-        repository.delete(id);
+        repository.deleteById(id);
+    }
+
+    @GetMapping("/filter/{keyword}")
+    public List<Content> findByTitle(@PathVariable String keyword){
+        return repository.findAllByTitleContains(keyword);
+    }
+
+    @GetMapping("/filter/status/{status}")
+    public List<Content> findByStatus(@PathVariable Status status){
+        return repository.listByStatus(status);
     }
 
 }

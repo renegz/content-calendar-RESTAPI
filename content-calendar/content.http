@@ -9,9 +9,9 @@ POST http://localhost:8080/api/content
 Content-Type: application/json
 
 {
-  "id": 2,
-  "title": "",
-  "desc": "Descripcion fea",
+  "id": null,
+  "title": "Segundo Post",
+  "description": "Descripcion fea",
   "status": "IDEA",
   "contentType": "ARTICLE",
   "dateCreated": "2024-02-17T21:21:54.6315271",
@@ -19,14 +19,14 @@ Content-Type: application/json
   "url": ""
 }
 
-### update existing Content
-PUT http://localhost:8080/api/content/2
+### Update existing Content
+PUT http://localhost:8080/api/content/1
 Content-Type: application/json
 
 {
   "id": 1,
   "title": "MI PRIMER POST",
-  "desc": "DESCRIPCION FEA",
+  "description": "DESCRIPCION FEA",
   "status": "IDEA",
   "contentType": "ARTICLE",
   "dateCreated": "2024-02-17T21:21:54.6315271",

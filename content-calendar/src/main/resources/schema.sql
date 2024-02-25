@@ -1,5 +1,5 @@
 CREATE TABLE IF NOT EXISTS Content (
-    id SERIAL PRIMARY KEY ,
+    id int auto_increment PRIMARY KEY ,
     title varchar(255) NOT NULL,
     description text,
     status VARCHAR(20) NOT NULL,
@@ -9,5 +9,5 @@ CREATE TABLE IF NOT EXISTS Content (
     url VARCHAR(255)
 );
 
-INSERT INTO Content(title, description, status, content_type, date_created)
-VALUES ('My Spring Data Blog Post', 'A post about spring data', 'IDEA', 'ARTICLE', CURRENT_TIMESTAMP())
+--INSERT INTO Content(title, description, status, content_type, date_created)
+--VALUES ('My Spring Data Blog Post', 'A post about spring data', 'IDEA', 'ARTICLE', CURRENT_TIMESTAMP())
