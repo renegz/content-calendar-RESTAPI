@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-@Repository
+@Repository //Anotarlo como repositorio genera una instancia de esta clase
 public class ContentCollectionRepository {
 
     private final List<Content> contentList = new ArrayList<>();
