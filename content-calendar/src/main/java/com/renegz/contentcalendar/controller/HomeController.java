@@ -13,7 +13,8 @@ import java.util.Map;
 public class HomeController {
 
     private final ContentCalendarProperties properties;
-    @Autowired //Para que realice la abstraccion e instancia de properties para la inyeccion de dependencias automaticamente
+
+    //Springboot se encarga de manejar todas las instancias de la aplicacion, por lo que realiza la inyeccion de dependencias automaticamente
     public HomeController(ContentCalendarProperties properties) {
         this.properties = properties;
     }
