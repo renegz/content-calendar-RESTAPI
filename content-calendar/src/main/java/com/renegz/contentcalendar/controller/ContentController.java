@@ -19,7 +19,7 @@ public class ContentController {
 
     private final ContentRepository repository;
 
-    @Autowired //Para que realice la instancia del repositorio en la inyeccion de dependencias automaticamente
+    @Autowired //Para que realice la abstraccion e instancia del repositorio para la inyeccion de dependencias automaticamente
     public ContentController(ContentRepository repository) {
         this.repository = repository;
     }
