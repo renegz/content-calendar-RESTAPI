@@ -4,6 +4,7 @@ import com.renegz.contentcalendar.model.Content;
 import com.renegz.contentcalendar.model.Status;
 import com.renegz.contentcalendar.repository.ContentRepository;
 import jakarta.validation.Valid;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
@@ -18,6 +19,7 @@ public class ContentController {
 
     private final ContentRepository repository;
 
+    @Autowired //Para que realice la instancia del repositorio en la inyeccion de dependencias automaticamente
     public ContentController(ContentRepository repository) {
         this.repository = repository;
     }

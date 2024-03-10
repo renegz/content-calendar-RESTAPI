@@ -1,6 +1,7 @@
 package com.renegz.contentcalendar.controller;
 
 import com.renegz.contentcalendar.config.ContentCalendarProperties;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,7 +13,7 @@ import java.util.Map;
 public class HomeController {
 
     private final ContentCalendarProperties properties;
-
+    @Autowired //Para que realice la instancia del repositorio en la inyeccion de dependencias automaticamente
     public HomeController(ContentCalendarProperties properties) {
         this.properties = properties;
     }
