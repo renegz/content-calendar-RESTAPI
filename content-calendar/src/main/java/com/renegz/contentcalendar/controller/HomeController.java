@@ -15,6 +15,7 @@ public class HomeController {
     private final ContentCalendarProperties properties;
 
     //Springboot se encarga de manejar todas las instancias de la aplicacion, por lo que realiza la inyeccion de dependencias automaticamente
+    //@Autowired //Indica que esto es algo que quiero inyectado, sin embargo esta implicito
     public HomeController(ContentCalendarProperties properties) {
         this.properties = properties;
     }
